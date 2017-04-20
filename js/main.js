@@ -46,6 +46,11 @@
     
     $('#days-in-office').html(today.diff(inauguration, 'days') > 0 ? today.diff(inauguration, 'days') : 0);
 
+    // Select and replace maintained by name
+    var maintainers = ["Bitter about EvE Goons", "Derek's Smarties", "SomethingAwful Goons", "Salty Asshats", "", "Goons (who know nothing about game development)", "Goons stuck in checkmate", "Goonrathi [FLJK]", "T-posed Goons", "MY GIRLFRIEND", "The Fourth Stimpire", "Ryan Archer"]
+    var maintainer = maintainers[Math.floor(Math.random() * maintainers.length)];
+    $('.maintainer-name').html(maintainer);
+
     // List.js object that we can filter upon
     var promiseList = new List('promises', listOptions).on('updated', function(list) {
       $('#count').html(list.visibleItems.length);
@@ -68,11 +73,6 @@
 
     // Hard reset all the buttons
     $('.promises__category--reset').on('click', resetFilter);
-
-    // Select and replace maintained by name
-    var maintainers = ["Bitter about EvE Goons", "Derek's Smarties", "Goons who know nothing about game development", "Goons stuck in checkmate", "Goonrathi [FLJK]", "T-posed Goons", "The Fourth Stimpire", "Ryan Archer"]
-    var maintainer = maintainers[Math.floor(Math.random() * maintainers.length)];
-    $('#maintainer-name').html(maintainer);
 
     // Any facet filter button
     $facets.on('click', function(e) {
