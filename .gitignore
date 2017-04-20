@@ -141,3 +141,7 @@ _site/
 .jekyll-metadata
 
 /.idea
+
+# branch notes and backups
+NOTE
+*~
